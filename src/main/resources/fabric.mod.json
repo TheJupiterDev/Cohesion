@@ -11,7 +11,7 @@
 		"homepage": "https://thejupiterdev.github.io",
 		"sources": "https://github.com/thejupiterdev/Cohesion"
 	},
-	"license": "MIT",
+	"license": "GNU-GPLv3",
 	"icon": "assets/cohesion/icon.png",
 	"environment": "*",
 	"entrypoints": {
