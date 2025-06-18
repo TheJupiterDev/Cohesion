@@ -4,7 +4,8 @@
 	"compatibilityLevel": "JAVA_21",
 	"mixins": [
 		"ExampleMixin",
-		"StackSizeMixin"
+		"StackSizeMixin",
+		"GlowBerriesMixin"
 	],
 	"injectors": {
 		"defaultRequire": 1
