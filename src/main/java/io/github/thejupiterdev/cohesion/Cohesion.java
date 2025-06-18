@@ -1,5 +1,7 @@
 package io.github.thejupiterdev.cohesion;
 
+import io.github.thejupiterdev.cohesion.item.ModItemGroups;
+import io.github.thejupiterdev.cohesion.item.ModItems;
 import net.fabricmc.api.ModInitializer;
 
 import org.slf4j.Logger;
@@ -11,6 +13,7 @@ public class Cohesion implements ModInitializer {
 
 	@Override
 	public void onInitialize() {
-
+		ModItemGroups.registerItemGroups();
+		ModItems.registerModItems();
 	}
 }
