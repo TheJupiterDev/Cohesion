@@ -5,7 +5,8 @@
 	"mixins": [
 		"ExampleMixin",
 		"StackSizeMixin",
-		"GlowBerriesMixin"
+		"GlowBerriesMixin",
+		"AmethystBlockMixin"
 	],
 	"injectors": {
 		"defaultRequire": 1
