@@ -10,10 +10,10 @@ import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
 
+
+
 public class ModItems {
     public static final Item ELDER_SHARD = registerItem("elder_shard", new Item(new Item.Settings()));
-    public static final Item CAKE = Registry.register(Registries.ITEM, Identifier.of("minecraft", "cake"), new BlockItem(Blocks.CAKE, new Item.Settings().maxCount(64)));
-
 
     private static Item registerItem(String name, Item item) {
         return Registry.register(Registries.ITEM, Identifier.of(Cohesion.MOD_ID, name), item);

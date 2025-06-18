@@ -3,7 +3,8 @@
 	"package": "io.github.thejupiterdev.cohesion.mixin",
 	"compatibilityLevel": "JAVA_21",
 	"mixins": [
-		"ExampleMixin"
+		"ExampleMixin",
+		"StackSizeMixin"
 	],
 	"injectors": {
 		"defaultRequire": 1

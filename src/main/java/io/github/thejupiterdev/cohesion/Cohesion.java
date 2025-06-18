@@ -4,12 +4,6 @@ import io.github.thejupiterdev.cohesion.item.ModItemGroups;
 import io.github.thejupiterdev.cohesion.item.ModItems;
 import net.fabricmc.api.ModInitializer;
 
-import net.minecraft.block.Blocks;
-import net.minecraft.item.BlockItem;
-import net.minecraft.item.Item;
-import net.minecraft.registry.Registries;
-import net.minecraft.registry.Registry;
-import net.minecraft.util.Identifier;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
