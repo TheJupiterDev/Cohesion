@@ -1,0 +1,11 @@
+{
+  "parent": "minecraft:block/cube",
+  "textures": {
+    "up": "cohesion:block/fletching_table_top",
+    "down": "minecraft:block/birch_planks",
+    "north": "cohesion:block/fletching_table_front",
+    "south": "cohesion:block/fletching_table_front",
+    "east": "cohesion:block/fletching_table_side",
+    "west": "cohesion:block/fletching_table_side"
+  }
+}

@@ -12,3 +12,5 @@ All Features added in Cohesion so far:
 - Updated Recipes
   - 2 Hanging Roots & 2 Dirt -> Rooted Dirt
   - Jack O Lantern recipe is now shapeless
+- Fletching Table UI (No recipes yet)
+  - Need to move from Mixin to intercepting Rightclick

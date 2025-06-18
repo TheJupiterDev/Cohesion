@@ -3,6 +3,7 @@ package io.github.thejupiterdev.cohesion;
 import io.github.thejupiterdev.cohesion.block.ModBlocks;
 import io.github.thejupiterdev.cohesion.item.ModItemGroups;
 import io.github.thejupiterdev.cohesion.item.ModItems;
+import io.github.thejupiterdev.cohesion.screen.ModScreenHandlers;
 import net.fabricmc.api.ModInitializer;
 
 import org.slf4j.Logger;
@@ -16,6 +17,7 @@ public class Cohesion implements ModInitializer {
 	public void onInitialize() {
 		ModItemGroups.registerItemGroups();
 		ModItems.registerModItems();
-		ModBlocks.registerModBlocks();
+		//ModBlocks.registerModBlocks();
+		ModScreenHandlers.registerScreenHandlers();
 	}
 }
