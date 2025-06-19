@@ -1,8 +1,11 @@
 package io.github.thejupiterdev.cohesion.block.entity.custom;
 
+import com.mojang.brigadier.Command;
 import io.github.thejupiterdev.cohesion.block.entity.ImplementedInventory;
 import io.github.thejupiterdev.cohesion.block.entity.ModBlockEntities;
-import io.github.thejupiterdev.cohesion.item.ModItems;
+import io.github.thejupiterdev.cohesion.recipe.FletchingTableRecipe;
+import io.github.thejupiterdev.cohesion.recipe.FletchingTableRecipeInput;
+import io.github.thejupiterdev.cohesion.recipe.ModRecipes;
 import io.github.thejupiterdev.cohesion.screen.custom.FletchingTableScreenHandler;
 import net.fabricmc.fabric.api.screenhandler.v1.ExtendedScreenHandlerFactory;
 import net.minecraft.block.BlockState;
@@ -10,23 +13,25 @@ import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.inventory.Inventories;
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.network.listener.ClientPlayPacketListener;
 import net.minecraft.network.packet.Packet;
 import net.minecraft.network.packet.s2c.play.BlockEntityUpdateS2CPacket;
+import net.minecraft.recipe.RecipeEntry;
 import net.minecraft.registry.RegistryWrapper;
-import net.minecraft.screen.ArrayPropertyDelegate;
 import net.minecraft.screen.PropertyDelegate;
 import net.minecraft.screen.ScreenHandler;
+import net.minecraft.screen.slot.Slot;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.text.Text;
 import net.minecraft.util.collection.DefaultedList;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import org.jetbrains.annotations.Nullable;
+
+import java.util.Optional;
 
 public class FletchingTableBlockEntity extends BlockEntity implements ExtendedScreenHandlerFactory<BlockPos>, ImplementedInventory {
     private final DefaultedList<ItemStack> inventory = DefaultedList.ofSize(4, ItemStack.EMPTY);
@@ -39,10 +44,10 @@ public class FletchingTableBlockEntity extends BlockEntity implements ExtendedSc
 
     private boolean crafted = false;
 
-    // TODO: REMOVE! THIS IS FOR TUTORIAL!
+    private ItemStack lastCraftedOutput = ItemStack.EMPTY;
+
+    // TODO: REMOVE?
     protected final PropertyDelegate propertyDelegate;
-    // private int progress = 0;
-    // private int maxProgress = 72;
 
     public FletchingTableBlockEntity(BlockPos pos, BlockState state) {
         super(ModBlockEntities.FLETCHING_TABLE_BE, pos, state);
@@ -86,58 +91,70 @@ public class FletchingTableBlockEntity extends BlockEntity implements ExtendedSc
         return new FletchingTableScreenHandler(syncId, playerInventory, this, this.propertyDelegate);
     }
 
-
+    // Logic
 
     public void tick(World world, BlockPos pos, BlockState state) {
         if (hasRecipe() && !crafted) {
             craftItem();
             markDirty(world, pos, state);
         }
-
         if (crafted && outputTaken()) {
+            crafted = false;
             removeStack(POTION_SLOT_ONE, 1);
             removeStack(POTION_SLOT_TWO, 1);
             removeStack(ARROW_SLOT, 1);
             clearOutput();
-            crafted = false;
             markDirty(world, pos, state);
         }
-
         if (!hasRecipe() && !outputTaken()) {
             clearOutput();
         }
+        System.out.println(crafted);
     }
 
     private boolean outputTaken() {
-        ItemStack output = new ItemStack(Items.SPECTRAL_ARROW, 3);
         ItemStack currentOutput = this.getStack(OUTPUT_SLOT);
-
-        return crafted && (!ItemStack.areItemsEqual(currentOutput, output) || currentOutput.getCount() < output.getCount());
+        return crafted && (currentOutput.isEmpty() || !ItemStack.areItemsEqual(currentOutput, lastCraftedOutput));
     }
+
 
     private void clearOutput() {
         this.setStack(OUTPUT_SLOT, new ItemStack(Items.AIR));
         crafted = false;
     }
 
-
     private void craftItem() {
-        this.setStack(OUTPUT_SLOT, new ItemStack(Items.SPECTRAL_ARROW, 3));
+        Optional<RecipeEntry<FletchingTableRecipe>> recipe = getCurrentRecipe();
+        if (recipe.isEmpty()) return;
+
+        ItemStack output = recipe.get().value().output().copy();
+        this.setStack(OUTPUT_SLOT, output);
+        this.lastCraftedOutput = output.copy();
         this.crafted = true;
     }
 
     private boolean hasRecipe() {
-        Item input1 = ModItems.ELDER_SHARD;
-        Item input2 = ModItems.ELDER_SHARD;
-        Item input3 = Items.ARROW;
-        ItemStack output = new ItemStack(Items.SPECTRAL_ARROW, 3);
+        Optional<RecipeEntry<FletchingTableRecipe>> recipe = getCurrentRecipe();
+        if (recipe.isEmpty()) return false;
 
-        return this.getStack(POTION_SLOT_ONE).isOf(input1) && this.getStack(POTION_SLOT_TWO).isOf(input2) &&
-                this.getStack(ARROW_SLOT).isOf(input3) && canInsertItemIntoOutputSlot(output);
+        ItemStack output = recipe.get().value().output();
+        return canInsertItemIntoOutputSlot(output);
+    }
+
+
+    private Optional<RecipeEntry<FletchingTableRecipe>> getCurrentRecipe() {
+        return this.getWorld().getRecipeManager()
+                .getFirstMatch(ModRecipes.FLETCHING_TABLE_TYPE, new FletchingTableRecipeInput(
+                        inventory.get(POTION_SLOT_ONE), inventory.get(POTION_SLOT_TWO), inventory.get(ARROW_SLOT)),
+                        this.getWorld());
     }
 
     private boolean canInsertItemIntoOutputSlot(ItemStack output) {
-        return this.getStack(OUTPUT_SLOT).isEmpty() || this.getStack(OUTPUT_SLOT).getItem() == output.getItem();
+        ItemStack current = getStack(OUTPUT_SLOT);
+        return current.isEmpty() ||
+                (ItemStack.areItemsEqual(current, output) &&
+                        ItemStack.areItemsAndComponentsEqual(current, output) &&
+                        current.getCount() + output.getCount() <= current.getMaxCount());
     }
 
     // Reading & Writing NBT of block

@@ -1,0 +1,15 @@
+{
+  "type": "cohesion:fletching_table",
+  "item_left": {
+    "item": "minecraft:glowstone_dust"
+  },
+  "item_right": {
+    "item": "minecraft:glowstone_dust"
+  },
+  "arrow": {
+    "item": "minecraft:arrow"
+  },
+  "result": {
+    "id": "minecraft:spectral_arrow"
+  }
+}

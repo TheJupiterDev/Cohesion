@@ -5,6 +5,7 @@ import io.github.thejupiterdev.cohesion.block.entity.ModBlockEntities;
 import io.github.thejupiterdev.cohesion.event.ModCallbacks;
 import io.github.thejupiterdev.cohesion.item.ModItemGroups;
 import io.github.thejupiterdev.cohesion.item.ModItems;
+import io.github.thejupiterdev.cohesion.recipe.ModRecipes;
 import io.github.thejupiterdev.cohesion.screen.ModScreenHandlers;
 import net.fabricmc.api.ModInitializer;
 
@@ -23,6 +24,7 @@ public class Cohesion implements ModInitializer {
 		ModBlockEntities.registerBlockEntities();
 		ModScreenHandlers.registerScreenHandlers();
 		ModCallbacks.registerModCallbacks();
+		ModRecipes.registerRecipes();
 	}
 
 }
