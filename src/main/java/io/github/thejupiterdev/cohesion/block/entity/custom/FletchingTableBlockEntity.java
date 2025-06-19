@@ -109,7 +109,6 @@ public class FletchingTableBlockEntity extends BlockEntity implements ExtendedSc
         if (!hasRecipe() && !outputTaken()) {
             clearOutput();
         }
-        System.out.println(crafted);
     }
 
     private boolean outputTaken() {
