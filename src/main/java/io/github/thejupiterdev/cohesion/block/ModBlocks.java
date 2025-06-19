@@ -1,6 +1,7 @@
 package io.github.thejupiterdev.cohesion.block;
 
 import io.github.thejupiterdev.cohesion.Cohesion;
+import io.github.thejupiterdev.cohesion.block.custom.FletchingTableBlock;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
@@ -14,6 +15,8 @@ import net.minecraft.util.Identifier;
 
 public class ModBlocks {
 
+    public static final Block FLETCHING_TABLE = registerBlock("fletching_table",
+            new FletchingTableBlock(AbstractBlock.Settings.create()));
 
     private static Block registerBlock(String name, Block block) {
         registerBlockItem(name, block);

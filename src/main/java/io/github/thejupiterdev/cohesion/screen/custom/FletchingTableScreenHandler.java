@@ -1,34 +1,39 @@
-// Modified FletchingTableScreenHandler.java
 package io.github.thejupiterdev.cohesion.screen.custom;
 
+import io.github.thejupiterdev.cohesion.block.entity.custom.FletchingTableBlockEntity;
 import io.github.thejupiterdev.cohesion.screen.ModScreenHandlers;
+import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.inventory.Inventory;
-import net.minecraft.inventory.SimpleInventory;
 import net.minecraft.item.ItemStack;
+import net.minecraft.screen.ArrayPropertyDelegate;
+import net.minecraft.screen.PropertyDelegate;
 import net.minecraft.screen.ScreenHandler;
 import net.minecraft.screen.slot.Slot;
+import net.minecraft.util.math.BlockPos;
 
 public class FletchingTableScreenHandler extends ScreenHandler {
     private final Inventory inventory;
+    private final PropertyDelegate propertyDelegate;
+    public final FletchingTableBlockEntity blockEntity;
 
-    // Constructor for client-side (called from mixin)
-    public FletchingTableScreenHandler(int syncId, PlayerInventory playerInventory) {
-        this(syncId, playerInventory, new SimpleInventory(4));
+    public FletchingTableScreenHandler(int syncId, PlayerInventory inventory, BlockPos pos) {
+        this(syncId, inventory, inventory.player.getWorld().getBlockEntity(pos), new ArrayPropertyDelegate(4));
+        //TODO: change to a reg inv???
     }
 
-    // Constructor with custom inventory
-    public FletchingTableScreenHandler(int syncId, PlayerInventory playerInventory, Inventory inventory) {
+    public FletchingTableScreenHandler(int syncId, PlayerInventory playerInventory, BlockEntity blockEntity,
+                                       PropertyDelegate arrayPropertyDelegate) {
         super(ModScreenHandlers.FLETCHING_TABLE_SCREEN_HANDLER, syncId);
-        this.inventory = inventory;
+        this.inventory = ((Inventory) blockEntity);
+        this.blockEntity = ((FletchingTableBlockEntity) blockEntity);
+        this.propertyDelegate = arrayPropertyDelegate;
 
-        // Input slots
-        this.addSlot(new Slot(inventory, 0, 13, 26));  // Arrow shaft
-        this.addSlot(new Slot(inventory, 1, 33, 26));  // Arrowhead
-        this.addSlot(new Slot(inventory, 2, 23, 45));  // Fletching
+        this.addSlot(new Slot(inventory, 0, 13, 26));
+        this.addSlot(new Slot(inventory, 1, 33, 26));
+        this.addSlot(new Slot(inventory, 2, 23, 45));
 
-        // Output slot
         this.addSlot(new Slot(inventory, 3, 134, 32) {
             @Override
             public boolean canInsert(ItemStack stack) {
@@ -38,6 +43,11 @@ public class FletchingTableScreenHandler extends ScreenHandler {
 
         addPlayerInventory(playerInventory);
         addPlayerHotbar(playerInventory);
+        addProperties(arrayPropertyDelegate);
+    }
+
+    public boolean isCrafting() {
+        return propertyDelegate.get(0) > 0;
     }
 
     @Override
@@ -65,7 +75,7 @@ public class FletchingTableScreenHandler extends ScreenHandler {
 
     @Override
     public boolean canUse(PlayerEntity player) {
-        return true; // Since vanilla fletching table has no restrictions
+        return this.inventory.canPlayerUse(player);
     }
 
     private void addPlayerInventory(PlayerInventory playerInventory) {

@@ -6,8 +6,7 @@
 		"ExampleMixin",
 		"StackSizeMixin",
 		"GlowBerriesMixin",
-		"AmethystBlockMixin",
-		"FletchingTableBlockMixin"
+		"AmethystBlockMixin"
 	],
 	"injectors": {
 		"defaultRequire": 1

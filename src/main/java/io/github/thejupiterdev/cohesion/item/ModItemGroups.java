@@ -1,6 +1,7 @@
 package io.github.thejupiterdev.cohesion.item;
 
 import io.github.thejupiterdev.cohesion.Cohesion;
+import io.github.thejupiterdev.cohesion.block.ModBlocks;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
@@ -16,6 +17,7 @@ public class ModItemGroups {
                     .displayName(Text.translatable("itemgroup.cohesion.cohesion_group"))
                     .entries((displayContext, entries) -> {
                         entries.add(ModItems.ELDER_SHARD);
+                        entries.add(ModBlocks.FLETCHING_TABLE);
                     }).build());
 
 
