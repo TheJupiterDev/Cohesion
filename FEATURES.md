@@ -14,3 +14,5 @@ All Features added in Cohesion so far:
   - Jack O Lantern recipe is now shapeless
 - Custom Fletching Table w. Recipes
   - Need to use vanilla FT
+- Added Sugar Cube, including Recipe & Loot Table
+  - Currently un-functional

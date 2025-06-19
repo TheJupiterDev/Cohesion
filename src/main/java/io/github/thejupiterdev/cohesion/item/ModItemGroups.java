@@ -17,7 +17,7 @@ public class ModItemGroups {
                     .displayName(Text.translatable("itemgroup.cohesion.cohesion_group"))
                     .entries((displayContext, entries) -> {
                         entries.add(ModItems.ELDER_SHARD);
-                        entries.add(ModBlocks.FLETCHING_TABLE);
+                        entries.add(ModBlocks.SUGAR_CUBE);
                     }).build());
 
 

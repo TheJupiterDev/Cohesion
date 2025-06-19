@@ -2,18 +2,22 @@ package io.github.thejupiterdev.cohesion.block;
 
 import io.github.thejupiterdev.cohesion.Cohesion;
 import io.github.thejupiterdev.cohesion.block.custom.FletchingTableBlock;
-import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
+import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
-import net.minecraft.block.Blocks;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
-import net.minecraft.item.Items;
+import net.minecraft.item.ItemGroups;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
+import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.Identifier;
 
 public class ModBlocks {
+
+    public static final Block SUGAR_CUBE = registerBlock("sugar_cube",
+            new Block(AbstractBlock.Settings.create().hardness(0.6f)
+                    .sounds(BlockSoundGroup.GRAVEL)));
 
     public static final Block FLETCHING_TABLE = registerBlock("fletching_table",
             new FletchingTableBlock(AbstractBlock.Settings.create()));
@@ -30,5 +34,9 @@ public class ModBlocks {
 
     public static void registerModBlocks() {
         Cohesion.LOGGER.info("Registering Mod Blocks for " + Cohesion.MOD_ID);
+
+        ItemGroupEvents.modifyEntriesEvent(ItemGroups.NATURAL).register(entries -> {
+            entries.add(ModBlocks.SUGAR_CUBE);
+        });
     }
 }
