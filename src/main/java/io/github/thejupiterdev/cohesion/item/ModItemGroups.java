@@ -24,6 +24,7 @@ public class ModItemGroups {
                         entries.add(ModItems.DIAMOND_ARROW);
                         entries.add(ModItems.REDSTONE_ARROW);
                         entries.add(ModItems.TORCH_ARROW);
+                        entries.add(ModItems.ENDER_ARROW);
                     }).build());
 
 

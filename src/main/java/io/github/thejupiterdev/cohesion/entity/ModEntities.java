@@ -50,6 +50,14 @@ public class ModEntities {
                     .build()
     );
 
+    public static final EntityType<EnderArrowEntity> ENDER_ARROW = Registry.register(
+            Registries.ENTITY_TYPE,
+            Identifier.of(Cohesion.MOD_ID, "ender_arrow"),
+            EntityType.Builder.<EnderArrowEntity>create(EnderArrowEntity::new, SpawnGroup.MISC)
+                    .dimensions(0.5f, 0.5f)
+                    .build()
+    );
+
     public static void registerModEntities() {
         Cohesion.LOGGER.info("Registering Mod Entities for " + Cohesion.MOD_ID);
     }

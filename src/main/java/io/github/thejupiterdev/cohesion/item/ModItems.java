@@ -18,6 +18,7 @@ public class ModItems {
     public static final Item DIAMOND_ARROW = registerItem("diamond_arrow", new DiamondArrowItem(new Item.Settings()));
     public static final Item REDSTONE_ARROW = registerItem("redstone_arrow", new RedstoneArrowItem(new Item.Settings()));
     public static final Item TORCH_ARROW = registerItem("torch_arrow", new TorchArrowItem(new Item.Settings()));
+    public static final Item ENDER_ARROW = registerItem("ender_arrow", new EnderArrowItem(new Item.Settings()));
 
     private static Item registerItem(String name, Item item) {
         return Registry.register(Registries.ITEM, Identifier.of(Cohesion.MOD_ID, name), item);
