@@ -1,6 +1,16 @@
 {
   "replace": false,
   "values": [
-    "cohesion:iron_arrow"
+    "cohesion:iron_arrow",
+    "cohesion:gold_arrow",
+    "cohesion:diamond_arrow",
+    "cohesion:redstone_arrow",
+    "cohesion:torch_arrow",
+    "cohesion:grappling_arrow",
+    "cohesion:ender_arrow",
+    "cohesion:cobweb_arrow",
+    "cohesion:bouncing_arrow",
+    "cohesion:prismatic_arrow",
+    "cohesion:echo_arrow"
   ]
 }

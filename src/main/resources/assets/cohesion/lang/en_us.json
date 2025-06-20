@@ -2,6 +2,28 @@
   "item.cohesion.elder_shard": "Elder Shard",
   "itemgroup.cohesion.cohesion_group": "Cohesion",
   "block.cohesion.sugar_cube": "Sugar Cube",
+
   "item.cohesion.iron_arrow": "Iron Arrow",
-  "entity.cohesion.iron_arrow": "Iron Arrow"
+  "item.cohesion.gold_arrow": "Gold Arrow",
+  "item.cohesion.diamond_arrow": "Diamond Arrow",
+  "item.cohesion.redstone_arrow": "Redstone Arrow",
+  "item.cohesion.torch_arrow": "Torch Arrow",
+  "item.cohesion.grappling_arrow": "Grappling Arrow",
+  "item.cohesion.ender_arrow": "Ender Arrow",
+  "item.cohesion.cobweb_arrow": "Cobweb Arrow",
+  "item.cohesion.bouncing_arrow": "Bouncing Arrow",
+  "item.cohesion.prismatic_arrow": "Prismatic Arrow",
+  "item.cohesion.echo_arrow": "Echo Arrow",
+
+  "entity.cohesion.iron_arrow": "Iron Arrow",
+  "entity.cohesion.gold_arrow": "Gold Arrow",
+  "entity.cohesion.diamond_arrow": "Diamond Arrow",
+  "entity.cohesion.redstone_arrow": "Redstone Arrow",
+  "entity.cohesion.torch_arrow": "Torch Arrow",
+  "entity.cohesion.grappling_arrow": "Grappling Arrow",
+  "entity.cohesion.ender_arrow": "Ender Arrow",
+  "entity.cohesion.cobweb_arrow": "Cobweb Arrow",
+  "entity.cohesion.bouncing_arrow": "Bouncing Arrow",
+  "entity.cohesion.prismatic_arrow": "Prismatic Arrow",
+  "entity.cohesion.echo_arrow": "Echo Arrow"
 }
