@@ -1,0 +1,21 @@
+{
+  "type": "cohesion:fletching_table",
+  "item_left": {
+    "item": "minecraft:potion"
+  },
+  "item_right": {
+    "item": "minecraft:gunpowder"
+  },
+  "arrow": {
+    "item": "minecraft:arrow"
+  },
+  "result": {
+    "id": "minecraft:tipped_arrow",
+    "components": {
+      "minecraft:potion_contents": {
+        "potion": "minecraft:fire_resistance"
+      }
+    },
+    "count": 4
+  }
+}

@@ -1,40 +1,53 @@
 package io.github.thejupiterdev.cohesion.screen.custom;
 
-import io.github.thejupiterdev.cohesion.block.entity.custom.FletchingTableBlockEntity;
 import io.github.thejupiterdev.cohesion.screen.ModScreenHandlers;
-import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.inventory.Inventory;
+import net.minecraft.inventory.SimpleInventory;
 import net.minecraft.item.ItemStack;
 import net.minecraft.screen.ArrayPropertyDelegate;
 import net.minecraft.screen.PropertyDelegate;
 import net.minecraft.screen.ScreenHandler;
+import net.minecraft.screen.ScreenHandlerContext;
 import net.minecraft.screen.slot.Slot;
 import net.minecraft.util.math.BlockPos;
 
 public class FletchingTableScreenHandler extends ScreenHandler {
     private final Inventory inventory;
     private final PropertyDelegate propertyDelegate;
-    public final FletchingTableBlockEntity blockEntity;
+    private final ScreenHandlerContext context;
 
-    public FletchingTableScreenHandler(int syncId, PlayerInventory inventory, BlockPos pos) {
-        this(syncId, inventory, inventory.player.getWorld().getBlockEntity(pos), new ArrayPropertyDelegate(4));
-        //TODO: change to a reg inv???
+    // Constructor for server-side (with BlockPos)
+    public FletchingTableScreenHandler(int syncId, PlayerInventory playerInventory, BlockPos pos) {
+        this(syncId, playerInventory, new SimpleInventory(4), new ArrayPropertyDelegate(4),
+                ScreenHandlerContext.create(playerInventory.player.getWorld(), pos));
     }
 
-    public FletchingTableScreenHandler(int syncId, PlayerInventory playerInventory, BlockEntity blockEntity,
-                                       PropertyDelegate arrayPropertyDelegate) {
+    // Constructor for client-side (without BlockPos)
+    public FletchingTableScreenHandler(int syncId, PlayerInventory playerInventory) {
+        this(syncId, playerInventory, new SimpleInventory(4), new ArrayPropertyDelegate(4),
+                ScreenHandlerContext.EMPTY);
+    }
+
+    // Main constructor
+    public FletchingTableScreenHandler(int syncId, PlayerInventory playerInventory, Inventory inventory,
+                                       PropertyDelegate propertyDelegate, ScreenHandlerContext context) {
         super(ModScreenHandlers.FLETCHING_TABLE_SCREEN_HANDLER, syncId);
-        this.inventory = ((Inventory) blockEntity);
-        this.blockEntity = ((FletchingTableBlockEntity) blockEntity);
-        this.propertyDelegate = arrayPropertyDelegate;
+        this.inventory = inventory;
+        this.propertyDelegate = propertyDelegate;
+        this.context = context;
 
-        this.addSlot(new Slot(inventory, 0, 13, 26));
-        this.addSlot(new Slot(inventory, 1, 33, 26));
-        this.addSlot(new Slot(inventory, 2, 23, 45));
+        // Make sure inventory is accessible to the player
+        inventory.onOpen(playerInventory.player);
 
-        this.addSlot(new Slot(inventory, 3, 134, 32) {
+        // Add fletching table slots
+        this.addSlot(new Slot(this.inventory, 0, 13, 26));
+        this.addSlot(new Slot(this.inventory, 1, 33, 26));
+        this.addSlot(new Slot(this.inventory, 2, 23, 45));
+
+        // Output slot (can't insert items)
+        this.addSlot(new Slot(this.inventory, 3, 134, 32) {
             @Override
             public boolean canInsert(ItemStack stack) {
                 return false;
@@ -43,7 +56,7 @@ public class FletchingTableScreenHandler extends ScreenHandler {
 
         addPlayerInventory(playerInventory);
         addPlayerHotbar(playerInventory);
-        addProperties(arrayPropertyDelegate);
+        addProperties(propertyDelegate);
     }
 
     public boolean isCrafting() {
@@ -75,7 +88,15 @@ public class FletchingTableScreenHandler extends ScreenHandler {
 
     @Override
     public boolean canUse(PlayerEntity player) {
-        return this.inventory.canPlayerUse(player);
+        return canUse(this.context, player, net.minecraft.block.Blocks.FLETCHING_TABLE);
+    }
+
+    @Override
+    public void onClosed(PlayerEntity player) {
+        super.onClosed(player);
+        this.context.run((world, pos) -> {
+            this.dropInventory(player, this.inventory);
+        });
     }
 
     private void addPlayerInventory(PlayerInventory playerInventory) {

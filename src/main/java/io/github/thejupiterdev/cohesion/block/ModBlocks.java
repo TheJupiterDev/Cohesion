@@ -1,7 +1,6 @@
 package io.github.thejupiterdev.cohesion.block;
 
 import io.github.thejupiterdev.cohesion.Cohesion;
-import io.github.thejupiterdev.cohesion.block.custom.FletchingTableBlock;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
@@ -18,9 +17,6 @@ public class ModBlocks {
     public static final Block SUGAR_CUBE = registerBlock("sugar_cube",
             new Block(AbstractBlock.Settings.create().hardness(0.6f)
                     .sounds(BlockSoundGroup.GRAVEL)));
-
-    public static final Block FLETCHING_TABLE = registerBlock("fletching_table",
-            new FletchingTableBlock(AbstractBlock.Settings.create()));
 
     private static Block registerBlock(String name, Block block) {
         registerBlockItem(name, block);
