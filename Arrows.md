@@ -1,5 +1,5 @@
 # Internal Arrow Doc
-- Gold Arrows have less of an arc, fly further
+- ~~Gold Arrows have less of an arc, fly further~~
 - ~~Iron Arrows damage increase .5 hearts~~
 - Diamond Arrows damage 1 heart increase
 - Redstone Arrows give off redstone signals

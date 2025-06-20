@@ -18,7 +18,9 @@ public class ModItemGroups {
                     .entries((displayContext, entries) -> {
                         entries.add(ModItems.ELDER_SHARD);
                         entries.add(ModBlocks.SUGAR_CUBE);
+
                         entries.add(ModItems.IRON_ARROW);
+                        entries.add(ModItems.GOLD_ARROW);
                     }).build());
 
 
