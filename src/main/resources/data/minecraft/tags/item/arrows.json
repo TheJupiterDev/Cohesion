@@ -3,6 +3,7 @@
   "values": [
     "cohesion:iron_arrow",
     "cohesion:gold_arrow",
-    "cohesion:diamond_arrow"
+    "cohesion:diamond_arrow",
+    "cohesion:redstone_arrow"
   ]
 }

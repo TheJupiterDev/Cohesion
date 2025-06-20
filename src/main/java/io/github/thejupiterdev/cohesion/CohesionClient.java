@@ -4,6 +4,7 @@ import io.github.thejupiterdev.cohesion.entity.ModEntities;
 import io.github.thejupiterdev.cohesion.entity.client.DiamondArrowEntityRenderer;
 import io.github.thejupiterdev.cohesion.entity.client.GoldArrowEntityRenderer;
 import io.github.thejupiterdev.cohesion.entity.client.IronArrowEntityRenderer;
+import io.github.thejupiterdev.cohesion.entity.client.RedstoneArrowEntityRenderer;
 import io.github.thejupiterdev.cohesion.screen.ModScreenHandlers;
 import io.github.thejupiterdev.cohesion.screen.custom.FletchingTableScreen;
 import net.fabricmc.api.ClientModInitializer;
@@ -19,5 +20,6 @@ public class CohesionClient implements ClientModInitializer {
         EntityRendererRegistry.register(ModEntities.IRON_ARROW, IronArrowEntityRenderer::new);
         EntityRendererRegistry.register(ModEntities.GOLD_ARROW, GoldArrowEntityRenderer::new);
         EntityRendererRegistry.register(ModEntities.DIAMOND_ARROW, DiamondArrowEntityRenderer::new);
+        EntityRendererRegistry.register(ModEntities.REDSTONE_ARROW, RedstoneArrowEntityRenderer::new);
     }
 }

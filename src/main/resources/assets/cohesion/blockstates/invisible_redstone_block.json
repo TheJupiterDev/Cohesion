@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "cohesion:block/invisible_redstone_block"
+    }
+  }
+}

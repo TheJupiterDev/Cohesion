@@ -22,6 +22,7 @@ public class ModItemGroups {
                         entries.add(ModItems.IRON_ARROW);
                         entries.add(ModItems.GOLD_ARROW);
                         entries.add(ModItems.DIAMOND_ARROW);
+                        entries.add(ModItems.REDSTONE_ARROW);
                     }).build());
 
 
