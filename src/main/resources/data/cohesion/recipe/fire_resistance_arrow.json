@@ -1,21 +1,32 @@
 {
   "type": "cohesion:fletching_table",
   "item_left": {
-    "item": "minecraft:potion"
+    "ingredient": {
+      "item": "minecraft:potion"
+    },
+    "components": {
+      "minecraft:potion_contents": {
+        "potion": "minecraft:long_fire_resistance"
+      }
+    }
   },
   "item_right": {
-    "item": "minecraft:gunpowder"
+    "ingredient": {
+      "item": "minecraft:gunpowder"
+    }
   },
   "arrow": {
-    "item": "minecraft:arrow"
+    "ingredient": {
+      "item": "minecraft:arrow"
+    }
   },
   "result": {
     "id": "minecraft:tipped_arrow",
+    "count": 6,
     "components": {
       "minecraft:potion_contents": {
         "potion": "minecraft:fire_resistance"
       }
-    },
-    "count": 4
+    }
   }
 }

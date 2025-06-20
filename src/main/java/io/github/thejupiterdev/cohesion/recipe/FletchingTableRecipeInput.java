@@ -3,14 +3,14 @@ package io.github.thejupiterdev.cohesion.recipe;
 import net.minecraft.item.ItemStack;
 import net.minecraft.recipe.input.RecipeInput;
 
-public record FletchingTableRecipeInput(ItemStack input1, ItemStack input2, ItemStack input3) implements RecipeInput {
+public record FletchingTableRecipeInput(ItemStack leftItem, ItemStack rightItem, ItemStack arrow) implements RecipeInput {
 
     @Override
     public ItemStack getStackInSlot(int slot) {
         return switch (slot) {
-            case 0 -> input1;
-            case 1 -> input2;
-            case 2 -> input3;
+            case 0 -> leftItem;
+            case 1 -> rightItem;
+            case 2 -> arrow;
             default -> ItemStack.EMPTY;
         };
     }
@@ -18,5 +18,9 @@ public record FletchingTableRecipeInput(ItemStack input1, ItemStack input2, Item
     @Override
     public int getSize() {
         return 3;
+    }
+
+    public boolean isEmpty() {
+        return leftItem.isEmpty() && rightItem.isEmpty() && arrow.isEmpty();
     }
 }

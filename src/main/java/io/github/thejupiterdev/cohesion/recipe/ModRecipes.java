@@ -9,8 +9,10 @@ import net.minecraft.util.Identifier;
 
 public class ModRecipes {
     public static final RecipeSerializer<FletchingTableRecipe> FLETCHING_TABLE_SERIALIZER = Registry.register(
-            Registries.RECIPE_SERIALIZER, Identifier.of(Cohesion.MOD_ID, "fletching_table"),
-                    new FletchingTableRecipe.Serializer());
+            Registries.RECIPE_SERIALIZER,
+            Identifier.of(Cohesion.MOD_ID, "fletching_table"),
+            new FletchingTableRecipe.Serializer()
+    );
     public static final RecipeType<FletchingTableRecipe> FLETCHING_TABLE_TYPE = Registry.register(
             Registries.RECIPE_TYPE, Identifier.of(Cohesion.MOD_ID, "fletching_table"),
             new RecipeType<FletchingTableRecipe>() {
