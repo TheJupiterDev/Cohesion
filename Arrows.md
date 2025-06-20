@@ -1,7 +1,7 @@
 # Internal Arrow Doc
 - ~~Gold Arrows have less of an arc, fly further~~
 - ~~Iron Arrows damage increase .5 hearts~~
-- Diamond Arrows damage 1 heart increase
+- ~~Diamond Arrows damage 1 heart increase~~
 - Redstone Arrows give off redstone signals
 - Torch Arrows place a torch where they land
 - Grappling Arrow

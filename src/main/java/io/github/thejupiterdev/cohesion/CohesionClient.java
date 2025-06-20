@@ -1,6 +1,7 @@
 package io.github.thejupiterdev.cohesion;
 
 import io.github.thejupiterdev.cohesion.entity.ModEntities;
+import io.github.thejupiterdev.cohesion.entity.client.DiamondArrowEntityRenderer;
 import io.github.thejupiterdev.cohesion.entity.client.GoldArrowEntityRenderer;
 import io.github.thejupiterdev.cohesion.entity.client.IronArrowEntityRenderer;
 import io.github.thejupiterdev.cohesion.screen.ModScreenHandlers;
@@ -17,5 +18,6 @@ public class CohesionClient implements ClientModInitializer {
 
         EntityRendererRegistry.register(ModEntities.IRON_ARROW, IronArrowEntityRenderer::new);
         EntityRendererRegistry.register(ModEntities.GOLD_ARROW, GoldArrowEntityRenderer::new);
+        EntityRendererRegistry.register(ModEntities.DIAMOND_ARROW, DiamondArrowEntityRenderer::new);
     }
 }

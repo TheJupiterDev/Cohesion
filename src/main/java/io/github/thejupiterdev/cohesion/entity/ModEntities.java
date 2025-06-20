@@ -1,6 +1,7 @@
 package io.github.thejupiterdev.cohesion.entity;
 
 import io.github.thejupiterdev.cohesion.Cohesion;
+import io.github.thejupiterdev.cohesion.entity.custom.DiamondArrowEntity;
 import io.github.thejupiterdev.cohesion.entity.custom.GoldArrowEntity;
 import io.github.thejupiterdev.cohesion.entity.custom.IronArrowEntity;
 import net.minecraft.entity.EntityType;
@@ -23,6 +24,14 @@ public class ModEntities {
             Registries.ENTITY_TYPE,
             Identifier.of(Cohesion.MOD_ID, "gold_arrow"),
             EntityType.Builder.<GoldArrowEntity>create(GoldArrowEntity::new, SpawnGroup.MISC)
+                    .dimensions(0.5f, 0.5f)
+                    .build()
+    );
+
+    public static final EntityType<DiamondArrowEntity> DIAMOND_ARROW = Registry.register(
+            Registries.ENTITY_TYPE,
+            Identifier.of(Cohesion.MOD_ID, "gold_arrow"),
+            EntityType.Builder.<DiamondArrowEntity>create(DiamondArrowEntity::new, SpawnGroup.MISC)
                     .dimensions(0.5f, 0.5f)
                     .build()
     );
