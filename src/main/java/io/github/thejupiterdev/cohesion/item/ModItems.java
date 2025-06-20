@@ -1,10 +1,7 @@
 package io.github.thejupiterdev.cohesion.item;
 
 import io.github.thejupiterdev.cohesion.Cohesion;
-import io.github.thejupiterdev.cohesion.item.custom.DiamondArrowItem;
-import io.github.thejupiterdev.cohesion.item.custom.GoldArrowItem;
-import io.github.thejupiterdev.cohesion.item.custom.IronArrowItem;
-import io.github.thejupiterdev.cohesion.item.custom.RedstoneArrowItem;
+import io.github.thejupiterdev.cohesion.item.custom.*;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroups;
@@ -20,6 +17,7 @@ public class ModItems {
     public static final Item GOLD_ARROW = registerItem("gold_arrow", new GoldArrowItem(new Item.Settings()));
     public static final Item DIAMOND_ARROW = registerItem("diamond_arrow", new DiamondArrowItem(new Item.Settings()));
     public static final Item REDSTONE_ARROW = registerItem("redstone_arrow", new RedstoneArrowItem(new Item.Settings()));
+    public static final Item TORCH_ARROW = registerItem("torch_arrow", new TorchArrowItem(new Item.Settings()));
 
     private static Item registerItem(String name, Item item) {
         return Registry.register(Registries.ITEM, Identifier.of(Cohesion.MOD_ID, name), item);

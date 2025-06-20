@@ -1,10 +1,7 @@
 package io.github.thejupiterdev.cohesion.entity;
 
 import io.github.thejupiterdev.cohesion.Cohesion;
-import io.github.thejupiterdev.cohesion.entity.custom.DiamondArrowEntity;
-import io.github.thejupiterdev.cohesion.entity.custom.GoldArrowEntity;
-import io.github.thejupiterdev.cohesion.entity.custom.IronArrowEntity;
-import io.github.thejupiterdev.cohesion.entity.custom.RedstoneArrowEntity;
+import io.github.thejupiterdev.cohesion.entity.custom.*;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.SpawnGroup;
 import net.minecraft.registry.Registries;
@@ -39,8 +36,16 @@ public class ModEntities {
 
     public static final EntityType<RedstoneArrowEntity> REDSTONE_ARROW = Registry.register(
             Registries.ENTITY_TYPE,
-            Identifier.of(Cohesion.MOD_ID, "gold_arrow"),
+            Identifier.of(Cohesion.MOD_ID, "redstone_arrow"),
             EntityType.Builder.<RedstoneArrowEntity>create(RedstoneArrowEntity::new, SpawnGroup.MISC)
+                    .dimensions(0.5f, 0.5f)
+                    .build()
+    );
+
+    public static final EntityType<TorchArrowEntity> TORCH_ARROW = Registry.register(
+            Registries.ENTITY_TYPE,
+            Identifier.of(Cohesion.MOD_ID, "torch_arrow"),
+            EntityType.Builder.<TorchArrowEntity>create(TorchArrowEntity::new, SpawnGroup.MISC)
                     .dimensions(0.5f, 0.5f)
                     .build()
     );
