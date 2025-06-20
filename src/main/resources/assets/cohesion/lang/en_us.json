@@ -1,6 +1,7 @@
 {
   "item.cohesion.elder_shard": "Elder Shard",
   "itemgroup.cohesion.cohesion_group": "Cohesion",
-  "block.cohesion.fletching_table": "Fletching Table",
-  "block.cohesion.sugar_cube": "Sugar Cube"
+  "block.cohesion.sugar_cube": "Sugar Cube",
+  "item.cohesion.iron_arrow": "Iron Arrow",
+  "entity.cohesion.iron_arrow": "Iron Arrow"
 }

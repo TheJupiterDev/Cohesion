@@ -2,6 +2,7 @@ package io.github.thejupiterdev.cohesion;
 
 import io.github.thejupiterdev.cohesion.block.ModBlocks;
 import io.github.thejupiterdev.cohesion.block.entity.ModBlockEntities;
+import io.github.thejupiterdev.cohesion.entity.ModEntities;
 import io.github.thejupiterdev.cohesion.event.ModCallbacks;
 import io.github.thejupiterdev.cohesion.item.ModItemGroups;
 import io.github.thejupiterdev.cohesion.item.ModItems;
@@ -25,6 +26,7 @@ public class Cohesion implements ModInitializer {
 		ModScreenHandlers.registerScreenHandlers();
 		ModCallbacks.registerModCallbacks();
 		ModRecipes.registerRecipes();
+		ModEntities.registerModEntities();
 	}
 
 }

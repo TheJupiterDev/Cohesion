@@ -12,7 +12,7 @@ All Features added in Cohesion so far:
 - Updated Recipes
   - 2 Hanging Roots & 2 Dirt -> Rooted Dirt
   - Jack O Lantern recipe is now shapeless
-- Custom Fletching Table w. Recipes
-  - Need to use vanilla FT
+- Added UI & Recipe system to Fletching Table
+  - Still need to make the actual content here
 - Added Sugar Cube, including Recipe & Loot Table
   - Currently un-functional
