@@ -34,3 +34,4 @@ All Features added in Cohesion so far:
   - Bouncing Arrows bounces for 6 bounces
   - Prismatic Arrow shot underwater
   - Echo arrow makes all mobs/entities within 8 block radius glow for 10 seconds
+- Throwable Fire Charges
