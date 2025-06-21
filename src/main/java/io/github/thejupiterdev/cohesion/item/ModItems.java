@@ -13,6 +13,7 @@ import net.minecraft.util.Identifier;
 public class ModItems {
     public static final Item ELDER_SHARD = registerItem("elder_shard", new Item(new Item.Settings()));
     public static final Item PRISMATIC_ROD = registerItem("prismatic_rod", new Item(new Item.Settings()));
+    public static final Item GRAPPLE = registerItem("grapple", new Item(new Item.Settings()));
 
     public static final Item IRON_ARROW = registerItem("iron_arrow", new IronArrowItem(new Item.Settings()));
     public static final Item GOLD_ARROW = registerItem("gold_arrow", new GoldArrowItem(new Item.Settings()));

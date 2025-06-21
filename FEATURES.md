@@ -4,6 +4,9 @@ All Features added in Cohesion so far:
   - Dropped by Elder Guardians
   - Use 2 Prismarine Rods to craft Trident
 - Iron Bars -> Iron Rod
+- Grapple
+  - Crafted with 3 flint & 2 iron nuggets
+  - Found in Treasure chest on Shipwrecks
 - Prismarine Rod
   - Smelt a prismarine block
 - Updated Stack Sizes
@@ -19,3 +22,15 @@ All Features added in Cohesion so far:
   - Still need to make the actual content here
 - Added Sugar Cube, including Recipe & Loot Table
   - Currently un-functional
+- New Arrows:
+  - Gold Arrows have less of an arc, fly further
+  - Iron Arrows damage increase .5 hearts
+  - Diamond Arrows damage 1 heart increase
+  - Redstone Arrows give off redstone signals
+  - Torch Arrows place a torch where they land
+  - Grappling Arrow
+  - Ender Arrows teleport player where it lands
+  - Cobweb arrows place cobwebs
+  - Bouncing Arrows bounces for 6 bounces
+  - Prismatic Arrow shot underwater
+  - Echo arrow makes all mobs/entities within 8 block radius glow for 10 seconds

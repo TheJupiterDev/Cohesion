@@ -19,6 +19,7 @@ public class ModItemGroups {
                         entries.add(ModItems.ELDER_SHARD);
                         entries.add(ModBlocks.SUGAR_CUBE);
                         entries.add(ModItems.PRISMATIC_ROD);
+                        entries.add(ModItems.GRAPPLE);
 
                         entries.add(ModItems.IRON_ARROW);
                         entries.add(ModItems.GOLD_ARROW);

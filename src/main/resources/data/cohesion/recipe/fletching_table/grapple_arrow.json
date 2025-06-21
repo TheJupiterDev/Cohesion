@@ -1,0 +1,22 @@
+{
+  "type": "cohesion:fletching_table",
+  "item_left": {
+    "ingredient": {
+      "item": "minecraft:feather"
+    }
+  },
+  "item_right": {
+    "ingredient": {
+      "item": "cohesion:grapple"
+    }
+  },
+  "arrow": {
+    "ingredient": {
+      "item": "minecraft:stick"
+    }
+  },
+  "result": {
+    "id": "cohesion:grappling_arrow",
+    "count": 2
+  }
+}
