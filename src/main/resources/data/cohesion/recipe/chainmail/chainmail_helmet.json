@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "aaa",
+    "a a"
+  ],
+  "key": {
+    "a": {
+      "item": "minecraft:chain"
+    }
+  },
+  "result": {
+    "id": "minecraft:chainmail_helmet"
+  }
+}
