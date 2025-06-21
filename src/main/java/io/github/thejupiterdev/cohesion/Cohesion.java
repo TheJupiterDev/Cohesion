@@ -6,6 +6,8 @@ import io.github.thejupiterdev.cohesion.entity.ModEntities;
 import io.github.thejupiterdev.cohesion.event.ModCallbacks;
 import io.github.thejupiterdev.cohesion.item.ModItemGroups;
 import io.github.thejupiterdev.cohesion.item.ModItems;
+import io.github.thejupiterdev.cohesion.potion.ModBrewingRecipes;
+import io.github.thejupiterdev.cohesion.potion.ModPotions;
 import io.github.thejupiterdev.cohesion.recipe.ModRecipes;
 import io.github.thejupiterdev.cohesion.screen.ModScreenHandlers;
 import net.fabricmc.api.ModInitializer;
@@ -27,6 +29,8 @@ public class Cohesion implements ModInitializer {
 		ModCallbacks.registerModCallbacks();
 		ModRecipes.registerRecipes();
 		ModEntities.registerModEntities();
+		ModPotions.registerPotions();
+		ModBrewingRecipes.registerBrewingRecipes();
 	}
 
 }

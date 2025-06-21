@@ -1,3 +1,6 @@
 {
-  "block.minecraft.iron_bars": "Iron Rod"
+  "block.minecraft.iron_bars": "Iron Rod",
+  "item.minecraft.potion.effect.long_levitation": "Potion of Levitation",
+  "item.minecraft.splash_potion.effect.long_levitation": "Splash Potion of Levitation",
+  "item.minecraft.lingering_potion.effect.long_levitation": "lingering Potion of Levitation"
 }
