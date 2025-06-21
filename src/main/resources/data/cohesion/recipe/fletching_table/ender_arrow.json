@@ -1,0 +1,22 @@
+{
+  "type": "cohesion:fletching_table",
+  "item_left": {
+    "ingredient": {
+      "item": "minecraft:feather"
+    }
+  },
+  "item_right": {
+    "ingredient": {
+      "item": "minecraft:ender_pearl"
+    }
+  },
+  "arrow": {
+    "ingredient": {
+      "item": "minecraft:end_rod"
+    }
+  },
+  "result": {
+    "id": "cohesion:ender_arrow",
+    "count": 2
+  }
+}

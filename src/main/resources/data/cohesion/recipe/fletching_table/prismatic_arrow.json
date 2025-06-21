@@ -1,0 +1,22 @@
+{
+  "type": "cohesion:fletching_table",
+  "item_left": {
+    "ingredient": {
+      "item": "minecraft:feather"
+    }
+  },
+  "item_right": {
+    "ingredient": {
+      "item": "minecraft:prismarine_shard"
+    }
+  },
+  "arrow": {
+    "ingredient": {
+      "item": "cohesion:prismatic_rod"
+    }
+  },
+  "result": {
+    "id": "cohesion:prismatic_arrow",
+    "count": 2
+  }
+}

@@ -58,6 +58,22 @@ public class ModEntities {
                     .build()
     );
 
+    public static final EntityType<PrismaticArrowEntity> PRISMATIC_ARROW = Registry.register(
+            Registries.ENTITY_TYPE,
+            Identifier.of(Cohesion.MOD_ID, "prismatic_arrow"),
+            EntityType.Builder.<PrismaticArrowEntity>create(PrismaticArrowEntity::new, SpawnGroup.MISC)
+                    .dimensions(0.5f, 0.5f)
+                    .build()
+    );
+
+    public static final EntityType<GrapplingArrowEntity> GRAPPLING_ARROW = Registry.register(
+            Registries.ENTITY_TYPE,
+            Identifier.of(Cohesion.MOD_ID, "grappling_arrow"),
+            EntityType.Builder.<GrapplingArrowEntity>create(GrapplingArrowEntity::new, SpawnGroup.MISC)
+                    .dimensions(0.5f, 0.5f)
+                    .build()
+    );
+
     public static void registerModEntities() {
         Cohesion.LOGGER.info("Registering Mod Entities for " + Cohesion.MOD_ID);
     }

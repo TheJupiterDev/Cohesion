@@ -6,6 +6,8 @@
     "cohesion:diamond_arrow",
     "cohesion:redstone_arrow",
     "cohesion:torch_arrow",
-    "cohesion:ender_arrow"
+    "cohesion:ender_arrow",
+    "cohesion:prismatic_arrow",
+    "cohesion:grappling_arrow"
   ]
 }

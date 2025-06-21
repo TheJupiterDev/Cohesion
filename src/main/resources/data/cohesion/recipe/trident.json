@@ -3,15 +3,15 @@
   "category": "equipment",
   "pattern": [
     "eee",
-    "ppp",
-    " p "
+    " p ",
+    "p  "
   ],
   "key": {
     "e": {
       "item": "cohesion:elder_shard"
     },
     "p": {
-      "item": "minecraft:dark_prismarine"
+      "item": "cohesion:prismatic_rod"
     }
   },
   "result": {

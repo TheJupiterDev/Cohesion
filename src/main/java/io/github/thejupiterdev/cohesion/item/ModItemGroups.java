@@ -18,6 +18,7 @@ public class ModItemGroups {
                     .entries((displayContext, entries) -> {
                         entries.add(ModItems.ELDER_SHARD);
                         entries.add(ModBlocks.SUGAR_CUBE);
+                        entries.add(ModItems.PRISMATIC_ROD);
 
                         entries.add(ModItems.IRON_ARROW);
                         entries.add(ModItems.GOLD_ARROW);
@@ -25,6 +26,8 @@ public class ModItemGroups {
                         entries.add(ModItems.REDSTONE_ARROW);
                         entries.add(ModItems.TORCH_ARROW);
                         entries.add(ModItems.ENDER_ARROW);
+                        entries.add(ModItems.PRISMATIC_ARROW);
+                        entries.add(ModItems.GRAPPLING_ARROW);
                     }).build());
 
 

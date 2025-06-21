@@ -2,7 +2,10 @@ All Features added in Cohesion so far:
 
 - Elder Shard Item
   - Dropped by Elder Guardians
-  - Use 3 with Dark Prismarine to craft Trident
+  - Use 2 Prismarine Rods to craft Trident
+- Iron Bars -> Iron Rod
+- Prismarine Rod
+  - Smelt a prismarine block
 - Updated Stack Sizes
   - Cakes now stack to 64
   - Snowballs stack to 64

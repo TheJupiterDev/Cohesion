@@ -1,0 +1,22 @@
+{
+  "type": "cohesion:fletching_table",
+  "item_left": {
+    "ingredient": {
+      "item": "minecraft:feather"
+    }
+  },
+  "item_right": {
+    "ingredient": {
+      "item": "minecraft:redstone_dust"
+    }
+  },
+  "arrow": {
+    "ingredient": {
+      "item": "minecraft:stick"
+    }
+  },
+  "result": {
+    "id": "cohesion:redstone_arrow",
+    "count": 2
+  }
+}

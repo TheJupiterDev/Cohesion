@@ -19,6 +19,8 @@ public class CohesionClient implements ClientModInitializer {
         EntityRendererRegistry.register(ModEntities.DIAMOND_ARROW, DiamondArrowEntityRenderer::new);
         EntityRendererRegistry.register(ModEntities.REDSTONE_ARROW, RedstoneArrowEntityRenderer::new);
         EntityRendererRegistry.register(ModEntities.TORCH_ARROW, TorchArrowEntityRenderer::new);
-        EntityRendererRegistry.register(ModEntities.ENDER_ARROW, TorchArrowEntityRenderer::new);
+        EntityRendererRegistry.register(ModEntities.ENDER_ARROW, EnderArrowEntityRenderer::new);
+        EntityRendererRegistry.register(ModEntities.PRISMATIC_ARROW, PrismaticArrowEntityRenderer::new);
+        EntityRendererRegistry.register(ModEntities.GRAPPLING_ARROW, GrapplingArrowEntityRenderer::new);
     }
 }

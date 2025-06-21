@@ -12,6 +12,7 @@ import net.minecraft.util.Identifier;
 
 public class ModItems {
     public static final Item ELDER_SHARD = registerItem("elder_shard", new Item(new Item.Settings()));
+    public static final Item PRISMATIC_ROD = registerItem("prismatic_rod", new Item(new Item.Settings()));
 
     public static final Item IRON_ARROW = registerItem("iron_arrow", new IronArrowItem(new Item.Settings()));
     public static final Item GOLD_ARROW = registerItem("gold_arrow", new GoldArrowItem(new Item.Settings()));
@@ -19,6 +20,8 @@ public class ModItems {
     public static final Item REDSTONE_ARROW = registerItem("redstone_arrow", new RedstoneArrowItem(new Item.Settings()));
     public static final Item TORCH_ARROW = registerItem("torch_arrow", new TorchArrowItem(new Item.Settings()));
     public static final Item ENDER_ARROW = registerItem("ender_arrow", new EnderArrowItem(new Item.Settings()));
+    public static final Item PRISMATIC_ARROW = registerItem("prismatic_arrow", new PrismaticArrowItem(new Item.Settings()));
+    public static final Item GRAPPLING_ARROW = registerItem("grappling_arrow", new GrapplingArrowItem(new Item.Settings()));
 
     private static Item registerItem(String name, Item item) {
         return Registry.register(Registries.ITEM, Identifier.of(Cohesion.MOD_ID, name), item);

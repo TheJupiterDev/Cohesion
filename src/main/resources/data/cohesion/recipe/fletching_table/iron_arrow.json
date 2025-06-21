@@ -1,0 +1,22 @@
+{
+  "type": "cohesion:fletching_table",
+  "item_left": {
+    "ingredient": {
+      "item": "minecraft:feather"
+    }
+  },
+  "item_right": {
+    "ingredient": {
+      "item": "minecraft:iron_nugget"
+    }
+  },
+  "arrow": {
+    "ingredient": {
+      "item": "minecraft:iron_bars"
+    }
+  },
+  "result": {
+    "id": "cohesion:iron_arrow",
+    "count": 2
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "type": "cohesion:fletching_table",
+  "item_left": {
+    "ingredient": {
+      "item": "minecraft:feather"
+    }
+  },
+  "item_right": {
+    "ingredient": {
+      "item": "minecraft:gold_nugget"
+    }
+  },
+  "arrow": {
+    "ingredient": {
+      "item": "minecraft:stick"
+    }
+  },
+  "result": {
+    "id": "cohesion:gold_arrow",
+    "count": 2
+  }
+}

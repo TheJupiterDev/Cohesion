@@ -2,21 +2,21 @@
   "type": "cohesion:fletching_table",
   "item_left": {
     "ingredient": {
-      "item": "minecraft:glowstone_dust"
+      "item": "minecraft:feather"
     }
   },
   "item_right": {
     "ingredient": {
-      "item": "minecraft:glowstone_dust"
+      "item": "minecraft:diamond"
     }
   },
   "arrow": {
     "ingredient": {
-      "item": "minecraft:arrow"
+      "item": "minecraft:stick"
     }
   },
   "result": {
-    "id": "minecraft:spectral_arrow"
+    "id": "cohesion:diamond_arrow",
+    "count": 2
   }
 }
-
