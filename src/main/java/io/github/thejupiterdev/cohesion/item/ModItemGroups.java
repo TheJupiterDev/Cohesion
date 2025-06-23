@@ -29,6 +29,7 @@ public class ModItemGroups {
                         entries.add(ModItems.ENDER_ARROW);
                         entries.add(ModItems.PRISMATIC_ARROW);
                         entries.add(ModItems.GRAPPLING_ARROW);
+                        entries.add(ModItems.BOUNCING_ARROW);
                     }).build());
 
 

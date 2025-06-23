@@ -23,6 +23,7 @@ public class ModItems {
     public static final Item ENDER_ARROW = registerItem("ender_arrow", new EnderArrowItem(new Item.Settings()));
     public static final Item PRISMATIC_ARROW = registerItem("prismatic_arrow", new PrismaticArrowItem(new Item.Settings()));
     public static final Item GRAPPLING_ARROW = registerItem("grappling_arrow", new GrapplingArrowItem(new Item.Settings()));
+    public static final Item BOUNCING_ARROW = registerItem("bouncing_arrow", new BouncingArrowItem(new Item.Settings()));
 
     private static Item registerItem(String name, Item item) {
         return Registry.register(Registries.ITEM, Identifier.of(Cohesion.MOD_ID, name), item);

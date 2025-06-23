@@ -8,6 +8,7 @@
     "cohesion:torch_arrow",
     "cohesion:ender_arrow",
     "cohesion:prismatic_arrow",
-    "cohesion:grappling_arrow"
+    "cohesion:grappling_arrow",
+    "cohesion:bouncing_arrow"
   ]
 }

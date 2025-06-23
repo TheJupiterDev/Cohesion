@@ -74,6 +74,14 @@ public class ModEntities {
                     .build()
     );
 
+    public static final EntityType<BouncingArrowEntity> BOUNCING_ARROW = Registry.register(
+            Registries.ENTITY_TYPE,
+            Identifier.of(Cohesion.MOD_ID, "bouncing_arrow"),
+            EntityType.Builder.<BouncingArrowEntity>create(BouncingArrowEntity::new, SpawnGroup.MISC)
+                    .dimensions(0.5f, 0.5f)
+                    .build()
+    );
+
     public static void registerModEntities() {
         Cohesion.LOGGER.info("Registering Mod Entities for " + Cohesion.MOD_ID);
     }

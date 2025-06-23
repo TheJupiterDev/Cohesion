@@ -36,3 +36,5 @@ All Features added in Cohesion so far:
   - Echo arrow makes all mobs/entities within 8 block radius glow for 10 seconds
 - Throwable Fire Charges
 - Chainmail Armor Crafting Recipe
+- Potion of Levitation (1m & 2m)
+  - Also includes Splash and Lingering of both
