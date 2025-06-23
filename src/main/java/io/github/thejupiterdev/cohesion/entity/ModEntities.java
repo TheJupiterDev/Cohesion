@@ -82,6 +82,14 @@ public class ModEntities {
                     .build()
     );
 
+    public static final EntityType<CobwebArrowEntity> COBWEB_ARROW = Registry.register(
+            Registries.ENTITY_TYPE,
+            Identifier.of(Cohesion.MOD_ID, "cobweb_arrow"),
+            EntityType.Builder.<CobwebArrowEntity>create(CobwebArrowEntity::new, SpawnGroup.MISC)
+                    .dimensions(0.5f, 0.5f)
+                    .build()
+    );
+
     public static void registerModEntities() {
         Cohesion.LOGGER.info("Registering Mod Entities for " + Cohesion.MOD_ID);
     }

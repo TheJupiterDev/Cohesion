@@ -34,39 +34,30 @@ public class BouncingArrowEntity extends ArrowEntity {
 
     @Override
     protected void onBlockHit(BlockHitResult blockHitResult) {
-        // If we haven't reached max bounces yet, bounce off the surface
         if (bounceCount < MAX_BOUNCES) {
             bounce(blockHitResult);
             bounceCount++;
         } else {
-            // After 6 bounces, behave like a normal arrow (stick to surface)
             super.onBlockHit(blockHitResult);
         }
     }
 
     private void bounce(BlockHitResult hitResult) {
-        // Get current velocity
         Vec3d velocity = this.getVelocity();
         Vec3d normal = Vec3d.of(hitResult.getSide().getVector());
 
-        // Calculate reflection: v' = v - 2(v·n)n
         double dotProduct = velocity.dotProduct(normal);
         Vec3d reflection = velocity.subtract(normal.multiply(2 * dotProduct));
 
-        // Apply damping to reduce velocity after bounce
         reflection = reflection.multiply(BOUNCE_DAMPING);
 
-        // Set the new velocity
         this.setVelocity(reflection);
 
-        // Move the arrow slightly away from the surface to prevent getting stuck
         Vec3d pos = this.getPos().add(normal.multiply(0.1));
         this.setPosition(pos.x, pos.y, pos.z);
 
-        // Reset the arrow's ground state so it continues flying
         this.inGround = false;
 
-        // Play bounce sound effect (optional)
         if (!this.getWorld().isClient) {
             this.getWorld().playSound(null, this.getX(), this.getY(), this.getZ(),
                     net.minecraft.sound.SoundEvents.BLOCK_STONE_HIT,
@@ -79,8 +70,4 @@ public class BouncingArrowEntity extends ArrowEntity {
         return new ItemStack(ModItems.BOUNCING_ARROW);
     }
 
-    // Optional: Add getter for bounce count for debugging or other purposes
-    public int getBounceCount() {
-        return bounceCount;
-    }
 }
