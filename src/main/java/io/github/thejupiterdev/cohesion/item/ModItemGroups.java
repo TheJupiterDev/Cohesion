@@ -31,6 +31,7 @@ public class ModItemGroups {
                         entries.add(ModItems.GRAPPLING_ARROW);
                         entries.add(ModItems.BOUNCING_ARROW);
                         entries.add(ModItems.COBWEB_ARROW);
+                        entries.add(ModItems.ECHO_ARROW);
                     }).build());
 
 

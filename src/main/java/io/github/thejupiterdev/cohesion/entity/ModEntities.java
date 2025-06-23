@@ -90,6 +90,14 @@ public class ModEntities {
                     .build()
     );
 
+    public static final EntityType<EchoArrowEntity> ECHO_ARROW = Registry.register(
+            Registries.ENTITY_TYPE,
+            Identifier.of(Cohesion.MOD_ID, "echo_arrow"),
+            EntityType.Builder.<EchoArrowEntity>create(EchoArrowEntity::new, SpawnGroup.MISC)
+                    .dimensions(0.5f, 0.5f)
+                    .build()
+    );
+
     public static void registerModEntities() {
         Cohesion.LOGGER.info("Registering Mod Entities for " + Cohesion.MOD_ID);
     }
